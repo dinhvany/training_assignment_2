@@ -62,38 +62,47 @@ int main()
 
 	// Input
 	int choice;
-	scanf("%d", &choice);
+	char* str;
+	scanf("%m[^\n]%*c", str);
+	printf("choice: %s_", str);
+	choice = (int)(str);
+	printf("str: %d_", choice);
+	//scanf("%d", &choice);
+
 	pthread_t tid;
+	//while(1)
+	//{
+		// Create connection
+		// depending on the input
+		switch (choice) {
+		case 1: {
+			int client_request = 1;
 
-	// Create connection
-	// depending on the input
-	switch (choice) {
-	case 1: {
-		int client_request = 1;
+			// Create thread
+			pthread_create(&tid, NULL,
+						clienthread,
+						&client_request);
+			//sleep(20);
+			break;
+		}
+		case 2: {
+			int client_request = 2;
 
-		// Create thread
-		pthread_create(&tid, NULL,
-					clienthread,
-					&client_request);
-		sleep(20);
-		break;
-	}
-	case 2: {
-		int client_request = 2;
+			// Create thread
+			pthread_create(&tid, NULL,
+						clienthread,
+						&client_request);
+			//sleep(20);
+			break;
+		}
+		default:
+			printf("Invalid Input\n");
+			//break;
+		}
 
-		// Create thread
-		pthread_create(&tid, NULL,
-					clienthread,
-					&client_request);
-		sleep(20);
-		break;
-	}
-	default:
-		printf("Invalid Input\n");
-		break;
-	}
+		// Suspend execution of
+		// calling thread
+		pthread_join(tid, NULL);
+	//}
 
-	// Suspend execution of
-	// calling thread
-	pthread_join(tid, NULL);
 }

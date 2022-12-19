@@ -35,7 +35,7 @@ void* reader(void* param)
     printf("\n%d reader is inside",
            readercount);
  
-    sleep(5);
+    //sleep(5);
  
     // Lock the semaphore
     sem_wait(&x);

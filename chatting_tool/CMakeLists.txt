@@ -6,4 +6,7 @@ include_directories(include)
 
 add_subdirectory(source)
 
+<<<<<<< HEAD
 add_subdirectory(source_cpp)
+=======
+>>>>>>> ee3fae7... Add Cmake, Catch signal

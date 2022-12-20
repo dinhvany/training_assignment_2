@@ -160,7 +160,10 @@ void accept_client(int id, fd_set* main_fd, int* max_fd, int serv_fd, SA_in* cli
 		// If new client fd is highest, record it for select
 		if(new_fd > *max_fd)
 			*max_fd = new_fd;
+<<<<<<< HEAD:chatting_tool/source/ChatServer.c
 		// Count number of clients
+=======
+>>>>>>> ee3fae7... Add Cmake, Catch signal:chatting_tool/ChatServer.c
 		number_clients = number_clients + 1;
 		printf("number clients: %d\n", number_clients);
 		// Log client connection to server

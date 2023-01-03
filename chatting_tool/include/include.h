@@ -17,13 +17,8 @@
 #include <stdlib.h> /* exit */
 #include <string.h> /* bzero */
 #include <time.h> /* time functions for server logging */
-<<<<<<< HEAD
 #include <signal.h>  /*signal handler*/
 #include <unistd.h>  /*implicit declaration of function*/   
-=======
-#include <signal.h>         /*signal handler*/
-#include <unistd.h>
->>>>>>> ee3fae7... Add Cmake, Catch signal
 
 // Constant value definitions
 #define DEFAULT_SERVER_PORT 9877
